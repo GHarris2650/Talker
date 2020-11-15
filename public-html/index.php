@@ -12,8 +12,42 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+   
+      <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-12 col-md-auto"><h1>TALKER | SIGN UP</h1>
+          </div>
+      </div>
 
+      <hr><br>
+
+      <div class="row">
+          <div class="col-6">
+              <form>
+                  <div class="form-group">
+                      <label for="formSignUpEmail">Email address</label>
+                      <input type="email" class="form-control" id="formSignUpEmail" placeholder="enter your email address">
+                  </div>
+                  <div class="form-group">
+                      <label for="formSignUpPassword">Password</label>
+                      <input type="password" class="form-control" id="formsignUpPassword" placeholder="Enter your password">
+
+                      <input type="password" class="form-control mt-4" id="formSignUpPasswordconf" placeholder="Confirm your password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">submit</button>
+              </form>
+          </div>
+
+          <div class="col-6">
+              <p>
+                Hello and welcome to Talker! We are very happy that you want to join our great community!
+              </p>
+              <p>
+                Please, enter your email and password.  You must have access to your email because we will send a confiration code to that address.  Your password must be between 8 and 16 characters long, with at least one uppercase ad one lowercase character, one nmber and one special character (@,*,$ or #).
+              </p>
+              <p>We hope you'll enjoy Talker!</p>
+          </div>
+      </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
