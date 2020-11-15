@@ -1,167 +1,29 @@
-<?php
-$website = 'http://www.zavrel.net';
-?>
-<!DOCTYPE html>
-<head>
-  <title>Hello World!</title>
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
-  <h1>Hello World!</h1>
-  <a href="<?php echo $website; ?>"><?php echo "ZAVREL CONSULTING: $website"; ?></a>
-  <?php
-  $trueValue = true;
-  $falseValue = false;
-  ?>
-  <p><?php echo "This is the content of trueValue: $trueValue"; ?></p>
-  <p><?php echo "This is the content of trueValue: $falseValue"; ?></p>  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-  <p>
-      <?php 
-      $countries = array('Finland', 'France', 'Spain');
-      print_r($countries);
-      $countries[] = 'Italy';
-      print_r($countries);
-      ?>
-  </p>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
 
-<p> 
-  <?php 
-  echo $countries[1];
-  ?>
-</p>
-  
-<p> 
-  <?php 
-  echo count ($countries);
-  ?>
-</p>
+    <!-- Optional JavaScript; choose one of the two! -->
 
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-<p> 
-  <?php 
-  $age = array(
-      'John' => 35,
-      'Paul' => 24,
-      'George' => 27
-  );
-  print_r($age);
-  ?>
-</p>
-
-<p> 
-  <?php 
-  echo $age['Paul'];
-  ?>
-</p>
-
-<script>
-  var cars = ["Mercedes", "volvo", "BMW", "Tesla"];
-  for (i in cars) {
-      console.log("The current car is" + cars[i]);
-  }
-</script>
-
-<?php 
-  $cars = ["Mercedes", "volvo", "BMW", "Tesla"];
-  foreach ($cars as $i) {
-    echo "The current car is $i<br>";
-  }
-?>
-
-<p> 
-    <?php 
-       class carBluePrint {
-          //Here goes properties and methods
-          
-
-          //Constructor
-          public function __construct($newColor, $newMake)
-          {
-            $this->color = $newColor;
-            $this->make = $newMake;
-          }
-
-          //setter method
-          public function setColor($newColor) {
-            $this->color = $newColor;
-          }
-
-          //getter method
-          public function getColor() {
-            return "<br>New color is: " . $this->color . "<br>";
-          }
-
-      }
-
-      $firstRealCar = new carBluePrint('green', 'Volvo');
-
-      var_dump($firstRealCar);
-      echo $firstRealCar ->color;
-
-      $firstRealCar->setColor("yellow");
-      echo $firstRealCar->getColor();
-
-      $secondRealCar = new carBluePrint('brown', 'Mercedes');
-
-      
-      echo $secondRealCar->getColor();
-      var_dump($secondRealCar);
-
-
-
-    ?>
-
-</p>
-
-<p> 
-
-      <?php 
-
-          class sportCarBluePrint extends carBluePrint{
-
-              //Constructor
-              public function __construct($newColor, $newMake, $newSpoiler)
-              {
-                parent::__construct($newColor, $newMake);
-                $this->spoiler = $newSpoiler;
-              }
-
-              public function activateSpoiler(){
-                return "<br><strong>SPOILER ACTIVE!</strong><br>";
-              }
-
-          }
-
-          $firstSportCar = new sportCarBluePrint('magenta', 'Porsche', 'tail');
-          $firstSportCar->setColor("Pink");
-          var_dump($firstSportCar);
-          $firstSportCar->activateSpoiler();
-
-      ?>
-
-</p>
-
-<p> 
-
-      <?php 
-
-          function divideOneByNumber($number){
-            if ($number == 0) {
-              throw new Exception("Division by zero is not allowed.");
-            }
-            return 1/$number;
-          }
-
-          try {
-              echo "the result of division is: " . divideOneByNumber(0);
-          }
-
-          catch(Exception $e) {
-            echo 'Message:' . $e->getMessage();
-          }
-      ?>
-
-</p>
-
-</body>
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
