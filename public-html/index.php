@@ -13,11 +13,11 @@
   </head>
   <body>
    
-      <div class="container">
+  <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-auto"><h1>TALKER | SIGN UP</h1>
+            </div>
           </div>
-      </div>
 
       <hr><br>
 
@@ -26,17 +26,19 @@
               <form>
                   <div class="form-group">
                       <label for="formSignUpEmail">Email address</label>
-                      <input type="email" class="form-control" id="formSignUpEmail" placeholder="enter your email address">
+                      <input type="email" class="form-control" id="formSignUpEmail" placeholder="enter your email address" required pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
                   </div>
                   <div class="form-group">
                       <label for="formSignUpPassword">Password</label>
-                      <input type="password" class="form-control" id="formsignUpPassword" placeholder="Enter your password">
+                      <input type="password" class="form-control" id="formSignUpPassword" placeholder="Enter your password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@*$#]).{8,16}" onkeyup="jsSignUpValidatePassword()">
 
-                      <input type="password" class="form-control mt-4" id="formSignUpPasswordconf" placeholder="Confirm your password">
+                      <input type="password" class="form-control mt-4" id="formSignUpPasswordConf" placeholder="Confirm your password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@*$#]).{8,16}" onkeyup="jsSignUpValidatePassword()">
                   </div>
+                  <p id="password_comparison"></p>
                   <button type="submit" class="btn btn-primary">submit</button>
               </form>
           </div>
+
 
           <div class="col-6">
               <p>
@@ -48,7 +50,24 @@
               <p>We hope you'll enjoy Talker!</p>
           </div>
       </div>
+  </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
+
+    <script>
+        var jsSignUpPassword = document.getElementById("formSignUpPassword");
+        var jsSignUpPasswordConf = document.getElementById("formSignUpPasswordConf");
+
+        function jsSignUpValidatePassword(){
+          if (jsSignUpPassword.value != jsSignUpPasswordConf.value) {
+            jsSignUpPasswordConf.setCustomValidity("Passwords don't match");
+            document.getElementById("password_comparison").innerHTML = "<div class='alert alert-danger' role='alert'>Passwords don't match!</div>"; 
+          }else {
+            jsSignUpPasswordConf.setCustomValidity('');
+            document.getElementById("password_comparison").innerHTML = "";
+          }
+        }
+    </script> 
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
