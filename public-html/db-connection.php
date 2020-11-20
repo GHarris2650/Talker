@@ -1,9 +1,9 @@
 <?php
 
-require 'db-conn.inc.php';
+require ('db-conn.inc.php');
 
 echo '<table border="1">';
-  foreach($Connection->query('SELECT * FROM movies') as $record) {
+  foreach($connection->query('SELECT * FROM movies') as $record) {
     echo '<tr>';
     echo '<td>' . $record['id'] . '</td>';
     echo '<td>' . $record['title'] . '</td>';

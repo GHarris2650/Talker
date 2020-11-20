@@ -1,13 +1,13 @@
 <?php
 
-  require 'db-pswd.inc.php';
+  require ('db-pswd.inc.php');
 
   try {
 
     //DOCKER
-    $Connection = new PDO('mysql:host=mysql;dbname=talker_db', 'root', 'talker-root-password');
+    $connection = new PDO('mysql:host=mysql;dbname=talker_db', 'root', 'talker-root-password');
 
-    print "Success! Connected to the database!";
+   // print "Success! Connected to the database!";
 
 
   } catch (PDOException $e) {
