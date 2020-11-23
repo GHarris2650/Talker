@@ -1,11 +1,9 @@
 <?php
 
-use Symfony\Component\ExpressionLanguage\Node\FunctionNode;
-
 session_start(); require('system.ctrl.php'); ?>
 
 
-<?php phpSendEmail('general@garyjphotography.com', 'Hello there!', 'this is just the test email'); ?>
+<?php //?>
 
 
 <!doctype html>
