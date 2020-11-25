@@ -15,7 +15,7 @@ $db_data = "";
 if (!is_array($isAlreadySignedUp)) {
 
 	//email not registered -> feedback message
-  $_SESSION["msgid"] = "807";
+  $_SESSION["msgid"] = "805";
   header('Location: index.php');
 
 } else if ($isAlreadySignedUp["user_verified"] == 1 ) {
@@ -30,7 +30,7 @@ if (!is_array($isAlreadySignedUp)) {
     echo "Let's activate!";
     $db_data = array(1, $isAlreadySignedUp["user_email"]);
     phpModifyDB('UPDATE users SET user_verified = ? WHERE user_email = ?', $db_data);
-    $db_data ="";
+    $db_data = "";
     $_SESSION["msgid"] = "811";
   header('Location: index.php');
 
