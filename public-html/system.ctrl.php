@@ -26,6 +26,17 @@ function phpShowSystemFeedback($feedback_id) {
       $feedback_text="Verification link is corrupted!";
       break;
 
+      case "808":
+      $feedback_type="danger";
+      $feedback_text="Wrong email or password!";
+      break;
+  
+      case "809":
+      $feedback_type="danger";
+      $feedback_text="Your account hasn't been activated yet. Please, check your inbox first!";
+      break;
+  
+
       case "811":
       $feedback_type="success";
       $feedback_text="You account has been activated, you can sign in!";
