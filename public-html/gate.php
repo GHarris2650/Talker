@@ -86,7 +86,9 @@ if (!isset($_SESSION["uid"]) || $_SESSION["uid"]=="") {
 	</div>
 
 
-	<?php $_SESSION["msgid"]=""; $_SESSION["resend"] = 0; ?>
+  <?php $_SESSION["msgid"]=""; $_SESSION["resend"] = 0; ?>
+  
+  <script src="gate.js"></script>
 
 
 	<!-- Optional Javascript -->
