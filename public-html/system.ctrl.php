@@ -33,7 +33,7 @@ function phpShowSystemFeedback($feedback_id) {
   
       case "809":
       $feedback_type="danger";
-      $feedback_text="Your account hasn't been activated yet. Please, check your inbox first!";
+      $feedback_text="Your account hasn't been activated yet. Please, check your inbox first! <a href='resend.ctrl.php'>Resend verification email</a>";
       break;
   
 
@@ -159,6 +159,20 @@ function phpShowEmailInputValue($user_email) {
     $content="";
   }
   return$content;
+}
+
+function phpSendVerificationEmail($user_email, $hashed_user_password) {
+	$verify_message = '
+
+	Welcome to Talker! Thanks for signing up!<br><br>
+	Your account has been created but before you can login you need to activate it with the link below.<br><br>
+
+	Please click this link to activate your account:
+	<a href="http://localhost/verify.php?email='.$user_email.'&hash='.$hashed_user_password.'">Verify your email</a>
+
+	';
+
+	phpSendEmail($user_email, 'Verify your account', $verify_message);
 }
 
 ?>

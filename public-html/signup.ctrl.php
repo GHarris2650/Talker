@@ -31,16 +31,7 @@ require('system.ctrl.php');
           $db_data = array($user_email, $hashed_user_password, 0);
           phpModifyDB('INSERT INTO users (user_email, user_password, user_verified) values (?, ?, ?)', $db_data);
           $db_data = "";
-          $verify_message = '
-          
-          Welcome to Talker! tanks for signing up!<br><br>
-          Your account has been created but before you can login you need to activate it with the link below.
-          <br><br>
-
-          Please click this link to activate your account:
-          <a href="http://localhost:8080/verify.php?email='.$user_email.'&hash='.$hashed_user_password.'">verify your email</a>
-          ';
-          phpSendEmail($user_email, 'Verify your account', $verify_message); 
+          phpSendVerificationEmail($user_email, $hashed_user_password); 
       }else{
           $_SESSION["msgid"] = "804";
       }
