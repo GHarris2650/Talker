@@ -32,13 +32,13 @@ if (!is_array($isAlreadySignedUp)) {
     phpModifyDB('UPDATE users SET user_verified = ? WHERE user_email = ?', $db_data);
     $db_data = "";
     $_SESSION["msgid"] = "811";
-  header('Location: index.php');
+    header('Location: index.php');
 
 } else {
 
     //hash doesn't match the password
     $_SESSION["msgid"] = "807";
-  header('Location: index.php');
+    header('Location: index.php');
 }
 
 ?>
