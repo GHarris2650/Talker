@@ -217,7 +217,7 @@ function phpSendVerificationEmail($user_email, $hashed_user_password) {
 	Your account has been created but before you can login you need to activate it with the link below.<br><br>
 
 	Please click this link to activate your account:
-	<a href="http://localhost/verify.php?email='.$user_email.'&hash='.$hashed_user_password.'">Verify your email</a>
+	<a href="http://localhost:8080/verify.php?email='.$user_email.'&hash='.$hashed_user_password.'">Verify your email</a>
 
 	';
 
