@@ -43,6 +43,7 @@ if (!isset($_SESSION["uid"]) || $_SESSION["uid"]=="") {
 
 		<!-- Talker CSS -->
 		<link rel="stylesheet" href="talker.css">
+
 	</head>
 	<body>
 
@@ -54,11 +55,17 @@ if (!isset($_SESSION["uid"]) || $_SESSION["uid"]=="") {
 		<div class="collapse navbar-collapse" id="navbarText">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item <?php if ($_GET['module']=='') { echo 'active'; } ?>">
-            <a class="nav-link" href="gate.php">Home<?php if ($_GET['module']=='') { ?><span class="sr-only"> (current) </span><?php } ?></a>
+						<a class="nav-link" href="gate.php">Home<?php if ($_GET['module']=='') { ?><span class="sr-only"> (current) </span><?php } ?></a>
+						
 				</li>
 				<li class="nav-item <?php if ($_GET['module']=='messaging') { echo 'active'; } ?>">
 					<a class="nav-link" href="gate.php?module=messaging">Messaging<?php if ($_GET['module']=='messaging') { ?><span class="sr-only"> (current) </span><?php } ?></a>
 				</li>
+
+				<li class="nav-item <?php if ($_GET['module']=='groups') { echo 'active'; } ?>">
+					<a class="nav-link" href="gate.php?module=groups">Groups<?php if ($_GET['module']=='groups') { ?><span class="sr-only"> (current)</span><?php } ?></a>
+				</li>
+
 				<li class="nav-item <?php if ($_GET['module']=='settings') { echo 'active'; } ?>">
 					<a class="nav-link" href="gate.php?module=settings">Settings<?php if ($_GET['module']=='settings') { ?><span class="sr-only"> (current) </span><?php } ?></a>
 				</li>
@@ -82,7 +89,18 @@ if (!isset($_SESSION["uid"]) || $_SESSION["uid"]=="") {
 			</div>
 		</div>
 		<?php } ?>
-    <!-- SYSTEM-WIDE FEEDBACK -->
+		<!-- SYSTEM-WIDE FEEDBACK -->
+		
+		<?php if ($dbUserRow["user_verified"] == 0) { ?>
+
+			<div class="jumbotron jumbotron-fluid">
+				<div class="container">
+					<h1 class="display-3">Access denied!</h1>
+					<p class="lead">You need to verify your email address before you can use this feature.</p>
+				</div>
+			</div>
+
+			<?php } else { ?>
 
     <!-- LOAD MODULE -->
   <?php
@@ -94,6 +112,18 @@ if (!isset($_SESSION["uid"]) || $_SESSION["uid"]=="") {
 			case "messaging":
       include('messaging.php');
       break;
+			
+			case "group":
+      include('group.php');
+      break;
+			
+			case "groups":
+      include('groups.php');
+      break;
+			
+			case "posts":
+      include('posts.php');
+      break;
 
       default:
       break;
@@ -101,7 +131,7 @@ if (!isset($_SESSION["uid"]) || $_SESSION["uid"]=="") {
   ?>
 <!-- LOAD MODULE -->
 
-    
+  <?php } ?>
   
 
 	</div>
