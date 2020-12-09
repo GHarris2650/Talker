@@ -21,7 +21,7 @@
 
 			<?php foreach ($dbGroupsList as $dbGroupRow) { ?>
 				<tr>
-					<td class="table-secondary">
+					<td class="group_header">
             <a href="gate.php?module=posts&gid=<?php echo $dbGroupRow['group_id']; ?>">
             <?php echo $dbGroupRow["group_name"]; ?>
             </a>
