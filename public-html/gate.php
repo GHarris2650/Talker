@@ -77,7 +77,7 @@ if (!isset($_SESSION["uid"]) || $_SESSION["uid"]=="") {
 		</div>
 	</nav>
 
-	<div class="container">
+<div class="container">
 
 		<!-- SYSTEM-WIDE FEEDBACK -->
 		<?php if (isset($_SESSION["msgid"]) && $_SESSION["msgid"]!="" && phpShowSystemFeedback($_SESSION["msgid"])[0]!="") { ?>
@@ -134,7 +134,7 @@ if (!isset($_SESSION["uid"]) || $_SESSION["uid"]=="") {
   <?php } ?>
   
 
-	</div>
+</div>
 
 
   <?php $_SESSION["msgid"]=""; $_SESSION["resend"] = 0; ?>

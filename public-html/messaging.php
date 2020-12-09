@@ -51,10 +51,10 @@
   </div>
 
   <?php
-	$db_data = array($_SESSION["uid"], $_SESSION["uid"]);
-	$dbMessagesList = phpFetchAllDB('SELECT * FROM messages WHERE message_sender_id = ? OR message_recipient_id = ? ORDER BY message_date DESC', $db_data);
-	$db_data = "";
-?>
+    $db_data = array($_SESSION["uid"], $_SESSION["uid"]);
+    $dbMessagesList = phpFetchAllDB('SELECT * FROM messages WHERE message_sender_id = ? OR message_recipient_id = ? ORDER BY message_date DESC', $db_data);
+    $db_data = "";
+  ?>
 
     <p><strong>Latest messages</strong></p>
 
